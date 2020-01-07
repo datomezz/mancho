@@ -1,0 +1,8 @@
+@mixin flex ($direction, $justify, $align){
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+$bg_color : #ECECEC;
+$main_color : #FD603E;
