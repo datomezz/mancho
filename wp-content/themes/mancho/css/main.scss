@@ -2,7 +2,7 @@
 @import "patrials/config";
 @import "patrials/_header.scss";
 @import "patrials/_slider.scss";
-
+@import "patrials/_footer.scss";
 html{
     scroll-behavior: smooth;
 }
@@ -74,29 +74,7 @@ html{
         background: #cc4f33;
     }
 }
-//FOOTER
-.footer{
-    background: #C4C4C4;
-}
-.footer-menu{
-    background: #fff;
-}
-.footer-menu__link{
-    padding-right: .5rem;
-    font-weight: bold;
-    font-size: .8rem;
-}
-.footer-img{
-    width: 5rem;
-    height: auto;
-}
-.footer-bottom{
-    background: #878787;
-}
-.footer-bottom__text{
-    font-size: .7rem;
-    font-weight: bold;
-}
+
 //GO-TOP
 .go-top{
     opacity: 1;
@@ -169,9 +147,9 @@ html{
     }
 }
 @media screen and (max-width:1200px){
-    .topnav__link{
+    .nav-link{
         &::after{
-            width: 0; //for navigation wrapping without absolute possition errors
+            width: 0 !important; //for navigation wrapping without absolute possition errors
         }
     }
 }

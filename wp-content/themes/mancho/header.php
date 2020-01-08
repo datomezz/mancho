@@ -1,58 +1,63 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Mancho
- */
-
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
+<!DOCTYPE html>
+<html lang="ka">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
-	<?php wp_head(); ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mancho's site">
+    <meta neme="author" content="zzD">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/scripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/main.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/scripts/fontawesome/css/all.css">
+    <link rel="icon" href="<?php bloginfo("template_directory");?>/img/favicon.ico">
+    <title>Media Project</title>
 </head>
-
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mancho' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$mancho_description = get_bloginfo( 'description', 'display' );
-			if ( $mancho_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $mancho_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mancho' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+<body>
+    <div class="container bg-color p-0">
+        <header class="header row p-2 pb-md-4 m-0" id="head">
+            <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center justify-content-between">
+                <div class="col-4 py-3">
+                    <img src="<?php bloginfo('template_directory');?>/img/header-logo.png" class="img-fluid">
+                </div>
+                <div class="col-md-12">
+                    <form class="search form-group row justify-content-center">
+                        <input type="text" name="search" class="search__input form-control form-control-sm w-50" placeholder="ჩაწერეთ საძიებო სიტყვა">
+                        <input type="submit" value="ძებნა" class="search__submit form-control"> 
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row justify-content-md-end align-items-md-center justify-content-center h-100 m-0">
+                    <div class="socials d-flex flex-md-column flex-row mt-md-0 mt-2">
+                        <a class="socials__link mr-md-0 mr-2" href="#" target="_blank"><i class="socials__icon fab fa-facebook-square"></i></a>
+                        <a class="socials__link mr-md-0 mr-2" href="#" target="_blank"><i class="socials__icon fab fa-instagram"></i></a>    
+                        <a class="socials__link mr-md-0 mr-2" href="#" target="_blank"><i class="socials__icon fab fa-twitter-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="topnav navbar navbar-expand-lg navbar-light bg-light">
+            <a href="http://localhost/wordpress_media" class="navbar-brand"><i class="topnav__brand fas fa-home"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavMenu" aria-controls="topnavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="topnavMenu"> -->
+			<?php wp_nav_menu( array(
+						'theme_location'  => 'primary',
+						'menu'            => '',
+						'container'       => 'div',
+						'container_class' => 'collapse navbar-collapse',
+						'container_id'    => 'topnavMenu',
+						'menu_class'      => 'topnav__ul',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+						'depth'           => 2,
+						'walker'          => new WP_Bootstrap_Navwalker(),
+					  ) ); ?>
+            <!-- </div> -->
+        </nav>

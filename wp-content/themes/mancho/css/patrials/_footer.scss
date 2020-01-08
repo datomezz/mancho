@@ -1,0 +1,30 @@
+//FOOTER
+.footer{
+    background: #C4C4C4;
+}
+.footer-menu{
+    background: #fff;
+}
+.footer-menu__link{
+    padding-right: .5rem;
+    font-weight: bold;
+    font-size: .8rem;
+}
+.footer-img{
+    width: 5rem;
+    height: auto;
+}
+.footer-bottom{
+    background: #878787;
+}
+.footer-bottom__text{
+    font-size: .7rem;
+    font-weight: bold;
+}
+.menu-item-type-custom, .menu-item-object-page{
+    margin-right: 1rem;
+    a{
+        font-size: .8rem;
+        font-weight: 600;
+    }
+}

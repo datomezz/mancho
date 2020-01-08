@@ -8,7 +8,7 @@
  */
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php'; 
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'Mancho_menu' ))); 
+	'primary' => __( 'Primary Menu', 'top_navbar' ))); 
 if ( ! function_exists( 'mancho_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
