@@ -12,7 +12,7 @@
     <title>Media Project</title>
 </head>
 <body>
-    <div class="container bg-color p-0">
+    <main class="container bg-color p-0">
         <header class="header row p-2 pb-md-4 m-0" id="head">
             <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center justify-content-between">
                 <div class="col-4 py-3">

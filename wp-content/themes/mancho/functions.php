@@ -7,8 +7,12 @@
  * @package Mancho
  */
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php'; 
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'top_navbar' ))); 
+register_nav_menus( array('primary' => __( 'Primary Menu', 'top_navbar' ))); 
+
+remove_filter("the_content", "wpautop");
+remove_filter("the_excerpt", "wpautop");
+remove_filter("comment_text", "wpautop");
+
 if ( ! function_exists( 'mancho_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -161,3 +165,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+remove_filter( 'the_content', 'wpautop' ); 
+remove_filter( 'the_excerpt', 'wpautop' );

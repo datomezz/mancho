@@ -1,4 +1,4 @@
-<footer class="footer mt-5">
+		<footer class="footer mt-5">
             <!-- <ul class="footer-menu row m-0 py-2 px-2">
                 <a href="#" class="footer-menu__link">მთავარი</a>
                 <a href="#" class="footer-menu__link">საიტის წესები</a>
@@ -33,7 +33,7 @@
                 <p class="footer-bottom__text m-0 py-1 px-2">© 2019. All Right Reserved</p>
             </div>
         </footer>
-    </div>
+	</main>
     <a href="#head" class="go-top bg-main text-light">⮝</a>
     <script type="text/javascript" src="<?php bloginfo('template_directory');?>/scripts/script.js"></script>
     <script src="<?php bloginfo('template_directory');?>/scripts/bootstrap/jquery-3.4.1.slim.min.js"></script>
