@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mancho's site">
     <meta neme="author" content="zzD">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/scripts/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/main.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/scripts/fontawesome/css/all.css">
-    <link rel="icon" href="<?php bloginfo("template_directory");?>/img/favicon.ico">
+    <link rel="icon" href="<?php bloginfo("template_directory");?>/assets/img/favicon.ico">
     <title>Media Project</title>
+    <?php wp_head() ?>
 </head>
 <body>
     <main class="container bg-color p-0">
         <header class="header row p-2 pb-md-4 m-0" id="head">
             <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center justify-content-between">
                 <div class="col-4 py-3">
-                    <img src="<?php bloginfo('template_directory');?>/img/header-logo.png" class="img-fluid">
+                    <img src="<?php bloginfo('template_directory');?>/assets/img/header-logo.png" class="img-fluid">
                 </div>
                 <div class="col-md-12">
                     <form class="search form-group row justify-content-center">
