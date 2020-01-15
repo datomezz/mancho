@@ -14,15 +14,23 @@
                     </div>
                     <div class="article-news__body card-body">
                         <a href="<?php the_permalink() ?>" class="article-news__title card-title h6"><?php the_title(); ?></a>
-                        <p class="article-news__text card-text text-muted"><?php the_content(); ?></p>
+                        <p class="article-news__text card-text text-muted"><?php the_excerpt(); ?></p>
                     </div>
                     <div class="article-news__footer d-flex flex-row justify-content-between align-items-end px-3 py-2">
                         <p class="article-news__footer-data m-0"><?php the_time('d F Y') ?></p>
-                        <p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i>3213</p>
+                        <p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i><?php echo getPostViews(get_the_ID());?></p>
                     </div>
                 </div>
             </article>
-    <?php endwhile; ?>
+            <?php endwhile; ?>
+            <div class="row col-12 pagination mx-0 mt-5 justify-content-center">
+                <?php   $args = array(
+                        'prev_text'    => __('&#10094;'),
+                        'next_text'    => __('&#10095;'),
+                    );
+                echo paginate_links( $args );
+                ?>
+            </div>
     <?php else : ?>
         <p> NO POSTS </p>
     <?php endif; ?>

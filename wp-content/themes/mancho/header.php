@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mancho's site">
+    <meta name="description" content="<?php bloginfo("description");?>">
     <meta neme="author" content="zzD">
     <link rel="icon" href="<?php bloginfo("template_directory");?>/assets/img/favicon.ico">
-    <title>Media Project</title>
+    <title><?php bloginfo("name");?></title>
     <?php wp_head() ?>
 </head>
 <body>

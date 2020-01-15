@@ -352,7 +352,7 @@ html {
 }
 
 .article-news__text {
-  max-height: 8rem;
+  max-height: 7rem;
   font-size: .8rem;
   overflow: hidden;
 }
@@ -450,6 +450,38 @@ html {
 }
 
 .tags__tag:hover {
+  background: #FD603E;
+  color: #fff;
+}
+
+.page-numbers {
+  width: 2rem;
+  height: 2rem;
+  margin-right: .05rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #FD603E;
+  background: #fff;
+  cursor: pointer;
+}
+
+.page-numbers:hover {
+  background: #FD603E;
+  color: #fff;
+}
+
+.current {
   background: #FD603E;
   color: #fff;
 }

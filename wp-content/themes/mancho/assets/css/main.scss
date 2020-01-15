@@ -55,7 +55,7 @@ html{
     }
 }
 .article-news__text{
-    max-height: 8rem;
+    max-height: 7rem;
     font-size: .8rem;
     overflow:hidden;
 }
@@ -146,6 +146,24 @@ html{
         background: $main-color;
         color: #fff;
     }
+}
+//PAGINATION
+.page-numbers{
+    width: 2rem;
+    height:2rem;
+    margin-right: .05rem;
+    @include flex(row, center, center);
+    border: 1px solid $main-color;
+    background: #fff;
+    cursor:pointer;
+    &:hover{
+        background: $main-color;
+        color: #fff;
+    }
+}
+.current{
+    background: $main-color;
+    color: #fff;
 }
 @media screen and (max-width:1200px){
     .nav-link{

@@ -3,11 +3,11 @@ remove_filter("the_content", "wpautop");
 remove_filter("the_excerpt", "wpautop");
 remove_filter("comment_text", "wpautop");
 
-remove_action('wp_head','feed_links_extra', 3); // убирает ссылки на rss категорий
-remove_action('wp_head','feed_links', 2); // минус ссылки на основной rss и комментарии
-remove_action('wp_head','rsd_link');  // сервис Really Simple Discovery
-remove_action('wp_head','wlwmanifest_link'); // Windows Live Writer
-remove_action('wp_head','wp_generator');  // скрыть версию wordpress
+remove_action('wp_head','feed_links_extra', 3);
+remove_action('wp_head','feed_links', 2);
+remove_action('wp_head','rsd_link');
+remove_action('wp_head','wlwmanifest_link');
+remove_action('wp_head','wp_generator');
 
 remove_action('wp_head','start_post_rel_link',10,0);
 remove_action('wp_head','index_rel_link');
