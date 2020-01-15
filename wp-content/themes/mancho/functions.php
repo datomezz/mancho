@@ -5,6 +5,8 @@ register_nav_menus( array('primary' => __( 'Primary Menu', 'top_navbar' )));
 
 require "remove_actions.php";
 
+add_theme_support( 'post-thumbnails' );
+
 add_action( "wp_enqueue_scripts", "mancho_styles");
 add_action( "wp_footer", "mancho_footer_scripts");
 

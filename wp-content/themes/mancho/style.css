@@ -7,3 +7,19 @@ Description: Blog theme by zzD
 Version: 1.0.0
 */
 
+.post-categories{
+    margin: 0;
+}
+.post-categories>li>a{
+    position: absolute;
+    background: #fd603e !important;
+    color: #fff;
+    bottom:0;
+    left:0;
+    font-size: .9   rem;
+    padding: 0 .5rem;
+    z-index: 10;
+}
+.post-categories>li>a:hover{
+    color : #fff;
+}
