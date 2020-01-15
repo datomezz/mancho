@@ -64,6 +64,29 @@ a:active {
   position: relative;
 }
 
+.hr-category a {
+  background: #FD603E;
+  padding: .2rem 2rem;
+  color: #fff;
+  font-weight: 500;
+  margin: 0;
+}
+
+.hr-category a:hover {
+  color: #fff;
+}
+
+.hr-category a::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background: #FD603E;
+}
+
 .hr-category__text {
   background: #FD603E;
   padding: .2rem 2rem;
