@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
+
 <?php 
     $categories = array("economics", "society", "politics", "culture");
     $categories_names = array("ეკონომიკა", "საზოგადოება", "პოლიტიკა", "კულტურა");
-    $number_posts = array(3, 3, 3, 3);
 ?>
 
 <div class="hr-category row mt-5 mb-3 mx-0">
@@ -23,7 +23,6 @@
             'suppress_filters' => true )); 
     ?>
     <?php foreach( $posts as $post ) : ?>
-        <!-- <echo get_the_ID()> xvalistvis -->
         <article class="col-lg-4 col-md-6 col-12 px-md-3 px-0 my-2">
             <div class="article-news card">
                 <div class="img-container">
@@ -45,9 +44,18 @@
             </div>
         </article>
         <?php endforeach ?>
-        <div class="col-12 d-flex flex-row justify-content-center mx-0 mt-5">
-            <a href="#" class="see-more rounded-pill bg-main px-4 py-2">მეტის ნახვა</a>
+        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+        <?php global $wp_query ?>
+        <script>
+            var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+            var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+            var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+            var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+        </script>
+        <div class="col-12 d-flex flex-row justify-content-center mx-0 mt-5" id="load_more">
+            <a class="see-more rounded-pill bg-main px-4 py-2" id="true_loadmore">მეტის ნახვა</a>
         </div>
+        <?php endif; ?>
 </section>
 
 <?php for($i = 0; $i < 4; $i++) : ?>
@@ -56,8 +64,8 @@
     </div>
     <section class="row mx-0 mb-5 px-md-2 px-0">
         <?php $posts = get_posts( array(
-                'numberposts' => $number_posts[$i],
-                'category_name'    => $categories[$i],
+                'numberposts' => 3,
+                'category_name' => $categories[$i],
                 'orderby'     => 'date',
                 'order'       => 'DESC',
                 'include'     => array(),
@@ -91,4 +99,5 @@
         <?php endforeach ?>
     </section>
 <?php endfor ?>
+
 <?php get_footer(); ?>

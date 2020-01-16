@@ -1,37 +1,73 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Mancho
- */
 
-get_header();
-?>
+<?php get_header(); ?>
+<?php setPostViews(get_the_ID()); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<section class="row mx-0">
+<article class="col-12 p-0">
+	<div class="post card p-0 bg-color border-md-0 border border-bottom-0">
+		<div class="img-container">
+			<?php if(has_post_thumbnail()) : ?>
+				<img src="<?php the_post_thumbnail_url('lg'); ?>" alt="article-news" class="rounded-0 post__img card-img-top">
+			<?php else : ?>
+				<img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt="article-news" class="rounded-0 post__img card-img-top">
+			<?php endif; ?>
+				<?php the_category(); ?>
+		</div>
+		<div class="card-body col-md-10 offset-md-1 col-12 offset-0 bg-light">
+			<h3 class="post__title card-title m-0"><?php the_title(); ?></h3>
+			<div class="article-news__footer d-flex flex-row justify-content-start my-2 py-2">
+				<p class="article-news__footer-data pr-3 m-0"><?php the_time('d F Y') ?></p>
+				<p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i><?php echo getPostViews(get_the_ID());?></p>
+			</div>
+			<p class="card-text post__text">
+				<?php the_post(); ?>
+				<?php the_content(); ?>
+			</p>
+		</div>
+	</div>
+	<div class="col-md-10 offset-md-1 col-12 offset-0 my-3 px-0">
+		<div class="tags bg-light p-2">
+			<i class="fas fa-tag"></i>
+			<?php the_tags("", " ", "");?>
+		</div>
+	</div>
+</article>
+</section>
+<div class="hr-category row mt-3 mx-0">
+	<a href="#" class="hr-category__text m-0">მსგავსი სიახლეები</a>
+</div>
+<section class="row mx-0 mb-5 px-md-2 px-0">
+	<?php 
+		$category = get_the_category();
+		rsort($category);
+		$cat_add_id = $category[0]->term_id;
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			setPostViews(get_the_ID());
-			get_template_part( 'template-parts/content', get_post_type() );
+		$args = array('cat' => $cat_add_id,
+					  'numberposts' => 3);
+		$posts = get_posts($args);
+	?>
+	<?php foreach( $posts as $post ) : ?>
+		<article class="col-lg-4 col-md-6 col-12 px-md-3 px-0 my-2">
+			<div class="article-news card">
+				<div class="img-container">
+					<?php if(has_post_thumbnail()):?>
+						<a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url('lg') ?>" alt="article-news" class="article-news__img card-img-top"></a>
+					<?php else:?>
+						<a href="<?php the_permalink() ?>"><img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt="article-news" class="article-news__img card-img-top"></a>
+					<?php endif;?>
+					<?php the_category(); ?>
+				</div>
+				<div class="article-news__body card-body">
+					<a href="<?php the_permalink() ?>" class="article-news__title card-title h6"><?php the_title(); ?></a>
+					<p class="article-news__text card-text text-muted"><?php the_excerpt(); ?></p>
+				</div>
+				<div class="article-news__footer d-flex flex-row justify-content-between align-items-end px-3 py-2">
+					<p class="article-news__footer-data m-0"><?php the_time('d F Y') ?></p>
+					<p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i><?php echo getPostViews(get_the_ID());?></p>
+				</div>
+			</div>
+		</article>
+	<?php endforeach ?>
+</section>
 
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

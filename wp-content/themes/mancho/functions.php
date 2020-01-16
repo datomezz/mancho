@@ -68,4 +68,5 @@ add_filter('excerpt_more', function($more) {
 	return '...';
 });
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
 ?>

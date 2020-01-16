@@ -6,7 +6,7 @@
     <meta name="description" content="<?php bloginfo("description");?>">
     <meta neme="author" content="zzD">
     <link rel="icon" href="<?php bloginfo("template_directory");?>/assets/img/favicon.ico">
-    <title><?php bloginfo("name");?></title>
+    <title><?php wp_title("");?></title>
     <?php wp_head() ?>
 </head>
 <body>

@@ -133,6 +133,19 @@ html{
         border-right: .4px solid #dddddd;
         padding-right: .5rem;
     }
+    a{
+        border:1px solid $main-color;
+        border-radius: 10vw;
+        padding: .2rem .5rem;
+        font-size: .8rem;
+        font-weight: bold;
+        color: #000;
+        margin-top: 1rem;
+        &:hover{
+            background: $main-color;
+            color: #fff;
+        }
+    }
 }
 .tags__tag{
     border:1px solid $main-color;

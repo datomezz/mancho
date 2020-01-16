@@ -8,7 +8,18 @@
     width: .8rem !important;
     height: .8rem !important;
 }
-
+.slider__headText{
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(0,0,0,.4);
+    transition: .2s ease;
+    &:hover{
+        background: rgba(0,0,0,.72);
+    }
+}
+.slider__arrow{
+    background-color: rgba(0,0,0,.8);
+}
 //TOPNEWS
 .topnews{
     border: 1px solid $main_color;

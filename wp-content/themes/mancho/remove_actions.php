@@ -1,7 +1,8 @@
 <?php 
-remove_filter("the_content", "wpautop");
+//remove wordpress page auto editon
+// remove_filter("the_content", "wpautop");
 remove_filter("the_excerpt", "wpautop");
-remove_filter("comment_text", "wpautop");
+// remove_filter("comment_text", "wpautop");
 
 remove_action('wp_head','feed_links_extra', 3);
 remove_action('wp_head','feed_links', 2);
