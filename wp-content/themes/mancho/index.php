@@ -9,9 +9,9 @@
 <div class="hr-category row mt-5 mb-3 mx-0">
     <a href="#" target="_blank" class="hr-category__text m-0">სიახლეები</a>
 </div>
-<section class="row mx-0 mb-5 px-md-2 px-0">
+<section class="news-section row mx-0 mb-5 px-md-2 px-0">
     <?php $posts = get_posts( array(
-            'numberposts' => 6,
+            'numberposts' => 30,
             'category'    => 0,
             'orderby'     => 'date',
             'order'       => 'DESC',
@@ -23,7 +23,7 @@
             'suppress_filters' => true )); 
     ?>
     <?php foreach( $posts as $post ) : ?>
-        <article class="col-lg-4 col-md-6 col-12 px-md-3 px-0 my-2">
+        <article class="news-section__article col-lg-4 col-md-6 col-12 px-md-3 px-0 my-2">
             <div class="article-news card">
                 <div class="img-container">
                     <?php if(has_post_thumbnail()):?>
@@ -44,18 +44,9 @@
             </div>
         </article>
         <?php endforeach ?>
-        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-        <?php global $wp_query ?>
-        <script>
-            var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-            var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
-            var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-            var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
-        </script>
         <div class="col-12 d-flex flex-row justify-content-center mx-0 mt-5" id="load_more">
-            <a class="see-more rounded-pill bg-main px-4 py-2" id="true_loadmore">მეტის ნახვა</a>
+            <a href="javascript:void(0)" onclick="loadMore()" class="see-more rounded-pill bg-main px-4 py-2" id="true_loadmore">მეტის ნახვა</a>
         </div>
-        <?php endif; ?>
 </section>
 
 <?php for($i = 0; $i < 4; $i++) : ?>
@@ -99,5 +90,28 @@
         <?php endforeach ?>
     </section>
 <?php endfor ?>
+<script>
+    //I don't know AJAX, so I do my way
+    let article = document.querySelectorAll(".news-section article");
+    let loadmore_button = document.querySelector(".see-more");
+    console.log(loadmore_button);
+    
+    let loadmore = 6;
+    
+    for(let i = loadmore; i < article.length; i++){
+        article[i].style.display = "none";
+    }
 
+
+    function loadMore(){
+        loadmore += 6;
+        if(loadmore > article.length){
+            loadmore = article.length;
+            loadmore_button.style.display = "none";
+        }
+        for(let i = 0; i < loadmore; i++){
+            article[i].removeAttribute("style");
+        }
+    }
+</script>
 <?php get_footer(); ?>
