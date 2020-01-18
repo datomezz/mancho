@@ -455,6 +455,7 @@ html {
   position: relative;
   padding-left: 2rem;
   font-weight: 600;
+  font-size: 2rem;
 }
 
 .post__title::before {
@@ -469,6 +470,7 @@ html {
 
 .post__text {
   font-size: .9rem;
+  position: relative;
 }
 
 .tags i {
@@ -572,6 +574,9 @@ html {
   .article-news__img {
     height: 15rem;
   }
+  .post__title {
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -589,6 +594,9 @@ html {
 @media screen and (max-width: 425px) {
   .slider__img {
     height: 14rem;
+  }
+  .post__title {
+    font-size: 1rem;
   }
 }
 

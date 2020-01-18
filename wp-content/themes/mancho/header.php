@@ -34,7 +34,7 @@
             </div>
         </header>
         <nav class="topnav navbar navbar-expand-lg navbar-light bg-light">
-            <a href="http://localhost/wordpress_media" class="navbar-brand"><i class="topnav__brand fas fa-home"></i></a>
+            <a href="<?php echo home_url(); ?>" class="navbar-brand"><i class="topnav__brand fas fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavMenu" aria-controls="topnavMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

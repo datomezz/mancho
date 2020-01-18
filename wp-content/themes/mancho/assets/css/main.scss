@@ -112,6 +112,7 @@ html{
     position: relative;
     padding-left: 2rem; 
     font-weight: 600;
+    font-size: 2rem;
     &::before{
         content: " ";
         display: inline-block;
@@ -124,6 +125,7 @@ html{
 }
 .post__text{
     font-size: .9rem;
+    position: relative;
 }
 //TAGS
 .tags{
@@ -200,6 +202,9 @@ html{
     .article-news__img{
         height: 15rem;
     }
+    .post__title{
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width:575px){
@@ -217,6 +222,9 @@ html{
 @media screen and (max-width:425px){
     .slider__img{
         height: 14rem;
+    }
+    .post__title{
+        font-size: 1rem;
     }
 }
 

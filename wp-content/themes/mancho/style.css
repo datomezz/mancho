@@ -23,3 +23,34 @@ Version: 1.0.0
 .post-categories>li>a:hover{
     color : #fff;
 }
+.fb-share{
+    position: absolute;
+    right: 3%;
+    top: 5%;
+}
+.fb-share__icon{
+    width: 1.8rem;
+    height: 1.8rem;
+    color: #3b5998;
+    transition: .2s ease;
+    visibility: hidden;
+    transition: .2s ease;
+}
+.img-container:hover .fb-share__icon{
+    visibility: visible;
+}
+.fb-share__text{
+    position:absolute;
+    bottom:.7rem;
+    right:.7rem;
+    background: #3b5998;
+    border-radius: .3rem;
+    padding: 0 .5rem;
+    font-size: .75rem;
+    height: 1.3rem;
+    color: #fff;
+}
+.fb-share__text:hover{
+    color: #fff;
+    transform: scale(1.1);
+}
