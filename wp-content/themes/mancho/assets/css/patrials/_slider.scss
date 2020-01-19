@@ -39,6 +39,7 @@
     overflow: hidden;
     .topnews__body-text{
         font-size: .8rem;
+        overflow-wrap: break-word;
     }
 }
 .topnews__img{

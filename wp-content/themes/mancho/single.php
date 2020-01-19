@@ -41,9 +41,8 @@
 	<?php 
 		$category = get_the_category();
 		rsort($category);
-		$cat_add_id = $category[0]->term_id;
-
-		$args = array('cat' => $cat_add_id,
+		$slug = $category[0]->slug;
+		$args = array('category_name' => $slug,
 					  'numberposts' => 3);
 		$posts = get_posts($args);
 	?>

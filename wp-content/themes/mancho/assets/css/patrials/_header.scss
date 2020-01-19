@@ -26,6 +26,15 @@
     }
 }
 
+.search__result{
+    color: $main_color;
+    .search__result-title{
+        color: #000;
+        font-size: .8rem;
+        font-weight: bold;
+    }
+}
+
 //SOCIALS
 .socials__icon{
     color: $main_color;

@@ -33,11 +33,11 @@ Version: 1.0.0
     height: 1.8rem;
     color: #3b5998;
     transition: .2s ease;
-    visibility: hidden;
-    transition: .2s ease;
+    opacity: 0;
+    transition: .3s ease;
 }
 .img-container:hover .fb-share__icon{
-    visibility: visible;
+    opacity: 1;
 }
 .fb-share__text{
     position:absolute;

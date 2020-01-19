@@ -41,14 +41,33 @@
 		</div>
 	</div>
 	<div class="col-lg-4 col-12 p-0">
-		<div class="topnews col-lg-11 offset-lg-1 col-12 offset-0 mt-lg-0 mt-3 h-100 p-0 bg-light">
-			<p class="topnews__header pl-2 m-0">დღის სიახლე</p>
-			<img src="http://localhost/wordpress_media/wp-content/uploads/2020/01/rickandmorty-300x169.jpg" alt="" class="topnews__img"/>
-			<div class="topnews__body p-2">
-				<h5 class="topnews__body-title">Lorem ipsum</h5>
-				<p class="topnews__body-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam possimus incidunt aliquid a dolores dolorum fuga quas, nisi doloremque .Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam possimus incidunt aliquid a dolores dolorum fuga quas, nisi doloremque .</p>
+		<?php $posts = get_posts( array(
+				'numberposts' => 1,
+				'category'    => 0,
+				'category_name' => 'ads',
+				'orderby'     => 'meta_value_num',
+				'order'       => 'DESC',
+				'include'     => array(),
+				'exclude'     => array(),
+				'meta_key'    => '',
+				'meta_value'  =>'',
+				'post_type'   => 'post',
+				'suppress_filters' => true )); 
+		?>
+		<?php foreach( $posts as $post ) : ?>
+			<div class="topnews col-lg-11 offset-lg-1 col-12 offset-0 mt-lg-0 mt-3 h-100 p-0 bg-light">
+				<p class="topnews__header pl-2 m-0">დღის სიახლე</p>
+				<?php if(has_post_thumbnail()) : ?>
+						<img src="<?php the_post_thumbnail_url("lg");?>" alt=""  class="topnews__img">
+					<?php else :?>
+						<img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt=""  class="topnews__img">
+					<?php endif ?>
+				<div class="topnews__body p-2">
+					<a href="<?php the_permalink() ?>"><h5 class="topnews__body-title"><?php the_title(); ?></h5></a>
+					<p class="topnews__body-text"><?php the_excerpt(); ?></p>
+				</div>
 			</div>
-		</div>
+		<?php endforeach ?>
 	</div>
 </section>
 <script>

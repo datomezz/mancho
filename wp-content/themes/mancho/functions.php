@@ -60,7 +60,7 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews(get_the_ID());
     }
 }
-//
+//Dots in article
 function wpdocs_custom_excerpt_length() {
     return 18;
 }
@@ -68,5 +68,20 @@ add_filter('excerpt_more', function($more) {
 	return '...';
 });
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+//Title Settings
+add_theme_support("title-tag");
+
+add_filter( 'document_title_parts', function( $title ){
+
+	if( isset($title['tagline']) ) unset( $title['tagline'] );
+	return $title;
+});
+
+add_filter( 'document_title_parts', function( $parts ){
+
+	if( isset($parts['site']) ) unset($parts['site']);
+	return $parts;
+});
 
 ?>

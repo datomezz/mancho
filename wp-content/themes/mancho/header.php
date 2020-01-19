@@ -6,7 +6,7 @@
     <meta name="description" content="<?php bloginfo("description");?>">
     <meta neme="author" content="zzD">
     <link rel="icon" href="<?php bloginfo("template_directory");?>/assets/img/favicon.ico">
-    <title><?php wp_title("");?></title>
+    <title><?php echo wp_get_document_title(); ?></title>
     <?php wp_head() ?>
 </head>
 <body>
@@ -17,10 +17,7 @@
                     <img src="<?php bloginfo('template_directory');?>/assets/img/header-logo.png" class="img-fluid">
                 </div>
                 <div class="col-md-12">
-                    <form class="search form-group row justify-content-center">
-                        <input type="text" name="search" class="search__input form-control form-control-sm w-50" placeholder="ჩაწერეთ საძიებო სიტყვა">
-                        <input type="submit" value="ძებნა" class="search__submit form-control"> 
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>
             </div>
             <div class="col-md-3">

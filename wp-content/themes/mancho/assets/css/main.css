@@ -160,6 +160,16 @@ a:active {
   color: #fff;
 }
 
+.search__result {
+  color: #FD603E;
+}
+
+.search__result .search__result-title {
+  color: #000;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
 .socials__icon {
   color: #FD603E;
   font-size: 1.3rem;
@@ -282,6 +292,7 @@ a:active {
 
 .topnews__body .topnews__body-text {
   font-size: .8rem;
+  overflow-wrap: break-word;
 }
 
 .topnews__img {
