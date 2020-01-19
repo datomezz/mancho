@@ -17,14 +17,14 @@ function mancho_styles(){
 	wp_enqueue_style( "fontawesome.css", get_template_directory_uri() . "/assets/scripts/fontawesome/css/all.css");
 }
 function mancho_footer_scripts(){
-	wp_enqueue_script("jQuery", get_template_directory_uri() . "/assets/scripts/bootstrap/jquery-3.4.1.slim.min.js");
-	wp_enqueue_script("popper", get_template_directory_uri() . "/assets/scripts/bootstrap/popper.min.js");
+    wp_enqueue_script("jquery");
+    wp_enqueue_script("popper", get_template_directory_uri() . "/assets/scripts/bootstrap/popper.min.js");
 	wp_enqueue_script("bootstrap", get_template_directory_uri() . "/assets/scripts/bootstrap/js/bootstrap.min.js");
-	wp_enqueue_scripts("mancho-scripts", get_template_directory_uri() . "/assets/scripts/mancho-scripts.js" );
+   
+	wp_enqueue_script('mancho-scripts', get_template_directory_uri() . "/assets/scripts/mancho-scripts.js", array('jquery'), true);
 }
 
 //POST VIEWS COUNTER
-// function to display number of posts.
 function getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);

@@ -2,12 +2,16 @@
 *{
     box-sizing: border-box;
     list-style: none;
-    font-family: sans-serif;
+    font-family: 'GL Venuri', sans-serif;
     &::selection{
         background: $main_color;
         color: #fff;
     }
 }
+html{
+    scroll-behavior: smooth;
+}
+
 a{
     text-decoration: none !important;
     color: #5a5a5a;
@@ -85,4 +89,97 @@ a{
         bottom:0;
         background: $main-color;
     }
+}
+//SEE-MORE
+.see-more{
+    color: #fff;
+    transition: .2s ease;
+    &:hover{
+        color : #fff;
+        background: #cc4f33;
+    }
+}
+
+//GO-TOP
+.go-top{
+    opacity: 0;
+    position: fixed;
+    right:0;
+    top: 50%;
+    font-size: 2vw;
+    transition: .4s ease;
+    padding: 1vw .2vw 1vw 1vw;
+    border-bottom-left-radius: 10vw;
+    border-top-left-radius: 10vw;
+}
+//404
+.container-404{
+    i{
+        font-size: 8.2rem;
+        color : $main_color;
+        align-self: center;
+    }
+}
+.text-404{
+    font-size: 8rem;
+}
+.description-404{
+    font-weight: bold;
+    font-size: .8rem;
+    color: $main_color;
+    margin: 0;
+    padding: .5rem 0;
+}
+//TAGS
+.tags{
+    i{
+        color: $main-color;
+        margin-right: .5rem;
+        border-right: .4px solid #dddddd;
+        padding-right: .5rem;
+    }
+    a{
+        border:1px solid $main-color;
+        border-radius: 10vw;
+        padding: .2rem .5rem;
+        font-size: .8rem;
+        font-weight: bold;
+        color: #000;
+        margin-top: 1rem;
+        &:hover{
+            background: $main-color;
+            color: #fff;
+        }
+    }
+}
+.tags__tag{
+    border:1px solid $main-color;
+    border-radius: 10vw;
+    padding: .2rem .5rem;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 1rem;
+    &:hover{
+        background: $main-color;
+        color: #fff;
+    }
+}
+//PAGINATION
+.page-numbers{
+    width: 2rem;
+    height:2rem;
+    margin-right: .05rem;
+    @include flex(row, center, center);
+    border: 1px solid $main-color;
+    background: #fff;
+    cursor:pointer;
+    &:hover{
+        background: $main-color;
+        color: #fff;
+    }
+}
+.current{
+    background: $main-color;
+    color: #fff;
 }

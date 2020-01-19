@@ -1,185 +1,11 @@
 @import "patrials/_variables.scss";
 @import "patrials/config";
 @import "patrials/_header.scss";
-@import "patrials/_slider.scss";
+@import "patrials/article";
+@import "patrials/post";
+@import "patrials/_sidebar.scss";
 @import "patrials/_footer.scss";
-html{
-    scroll-behavior: smooth;
-}
 
-//Article-news
-.article-news{
-    height: 26rem;
-    overflow: hidden;
-}
-.img-container{
-    overflow: hidden;
-    border-bottom: 3px solid $main-color;
-    position: relative;
-}
-
-.img-container__category{
-    position: absolute;
-    background: $main-color;
-    color: #fff;
-    bottom:0;
-    left:0;
-    font-size: .9   rem;
-    padding: 0 .5rem;
-    z-index: 10;
-    &:hover{
-        color : #fff;
-    }
-}
-.article-news__img{
-    cursor: pointer;
-    height: 12rem;
-    transition: .2s ease;
-    &:hover{
-        transform: scale(1.1);
-        filter: blur(1px);
-    }
-}
-
-.article-news__body{
-    height: 12rem;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-.article-news__title{
-    color: #000;
-    transition: .2s ease;
-    font-weight: 600;
-    &:hover{
-        color: $main_color;
-    }
-}
-.article-news__text{
-    max-height: 7rem;
-    font-size: .8rem;
-    overflow:hidden;
-}
-.article-news__footer{
-    height: 2rem;
-    p{
-        font-size: .8rem;
-        font-weight: bold;
-    }
-}
-//SEE-MORE
-.see-more{
-    color: #fff;
-    transition: .2s ease;
-    &:hover{
-        color : #fff;
-        background: #cc4f33;
-    }
-}
-
-//GO-TOP
-.go-top{
-    opacity: 1;
-    position: fixed;
-    right:0;
-    top: 50%;
-    font-size: 2vw;
-    transition: .4s ease;
-    padding: 1vw .2vw 1vw 1vw;
-    border-bottom-left-radius: 10vw;
-    border-top-left-radius: 10vw;
-}
-//POST
-.post__img{
-    cursor: pointer;
-    max-height: 30rem;
-    transition: .2s ease;
-
-}
-.post__category{
-    position: absolute;
-    background: $main-color;
-    color: #fff;
-    bottom:0;
-    left:0;
-    font-size: 1rem;
-    padding: .2rem 1rem;
-    z-index: 10;
-    &:hover{
-        color : #fff;
-    }
-}
-.post__title{
-    position: relative;
-    padding-left: 2rem; 
-    font-weight: 600;
-    font-size: 2rem;
-    &::before{
-        content: " ";
-        display: inline-block;
-        position: absolute;
-        width: .5rem;
-        height: 100%;
-        left:0;
-        background: $main-color;
-    }
-}
-.post__text{
-    font-size: .9rem;
-    position: relative;
-}
-//TAGS
-.tags{
-    i{
-        color: $main-color;
-        margin-right: .5rem;
-        border-right: .4px solid #dddddd;
-        padding-right: .5rem;
-    }
-    a{
-        border:1px solid $main-color;
-        border-radius: 10vw;
-        padding: .2rem .5rem;
-        font-size: .8rem;
-        font-weight: bold;
-        color: #000;
-        margin-top: 1rem;
-        &:hover{
-            background: $main-color;
-            color: #fff;
-        }
-    }
-}
-.tags__tag{
-    border:1px solid $main-color;
-    border-radius: 10vw;
-    padding: .2rem .5rem;
-    font-size: .8rem;
-    font-weight: bold;
-    color: #000;
-    margin-top: 1rem;
-    &:hover{
-        background: $main-color;
-        color: #fff;
-    }
-}
-//PAGINATION
-.page-numbers{
-    width: 2rem;
-    height:2rem;
-    margin-right: .05rem;
-    @include flex(row, center, center);
-    border: 1px solid $main-color;
-    background: #fff;
-    cursor:pointer;
-    &:hover{
-        background: $main-color;
-        color: #fff;
-    }
-}
-.current{
-    background: $main-color;
-    color: #fff;
-}
 @media screen and (max-width:1200px){
     .nav-link{
         &::after{
@@ -216,6 +42,7 @@ html{
     }
     .footer-img{
         width: 3rem !important;
+        height: 3rem !important;
     }
 }
 

@@ -53,28 +53,5 @@
         <?php endforeach ?>
     </section>
 <?php endfor ?>
-<script>
-    //I don't know AJAX, so I do my way
-    let article = document.querySelectorAll(".news-section article");
-    let loadmore_button = document.querySelector(".see-more");
-    console.log(loadmore_button);
-    
-    let loadmore = 6;
-    
-    for(let i = loadmore; i < article.length; i++){
-        article[i].style.display = "none";
-    }
 
-
-    function loadMore(){
-        loadmore += 6;
-        if(loadmore > article.length){
-            loadmore = article.length;
-            loadmore_button.style.display = "none";
-        }
-        for(let i = 0; i < loadmore; i++){
-            article[i].removeAttribute("style");
-        }
-    }
-</script>
 <?php get_footer(); ?>

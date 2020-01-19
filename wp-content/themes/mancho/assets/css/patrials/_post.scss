@@ -1,0 +1,61 @@
+//POST
+.post__img{
+    cursor: pointer;
+    max-height: 30rem;
+    transition: .2s ease;
+
+}
+.post__category{
+    position: absolute;
+    background: $main-color;
+    color: #fff;
+    bottom:0;
+    left:0;
+    font-size: 1rem;
+    padding: .2rem 1rem;
+    z-index: 10;
+    &:hover{
+        color : #fff;
+    }
+}
+.post__title{
+    position: relative;
+    padding-left: 2rem; 
+    font-weight: 600;
+    font-size: 2rem;
+    &::before{
+        content: " ";
+        display: inline-block;
+        position: absolute;
+        width: .5rem;
+        height: 100%;
+        left:0;
+        background: $main-color;
+    }
+}
+.post__text{
+    font-size: .9rem;
+    position: relative;
+}
+.card-body{
+    p{
+        font-family: sans-serif;
+    }
+}
+
+.post-categories{
+    margin: 0;
+}
+.post-categories>li>a{
+    position: absolute;
+    background: #fd603e !important;
+    color: #fff;
+    bottom:0;
+    left:0;
+    font-size: .9   rem;
+    padding: 0 .5rem;
+    z-index: 10;
+}
+.post-categories>li>a:hover{
+    color : #fff;
+}

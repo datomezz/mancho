@@ -4,5 +4,11 @@
     justify-content: $justify;
     align-items: $align;
 }
+
+@font-face{
+    font-family: GL Venuri;
+    src: url(../../fonts/gl-lortkipanidze-bold.ttf);
+}
+
 $bg_color : #ECECEC;
 $main_color : #FD603E;

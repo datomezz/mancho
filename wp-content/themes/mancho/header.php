@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo("description");?>">
     <meta neme="author" content="zzD">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="icon" href="<?php bloginfo("template_directory");?>/assets/img/favicon.ico">
     <title><?php echo wp_get_document_title(); ?></title>
     <?php wp_head() ?>
