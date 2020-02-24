@@ -2,7 +2,7 @@
     <div class="article-news card">
         <div class="img-container">
             <?php if(has_post_thumbnail()):?>
-                <a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url('lg') ?>" alt="article-news" class="article-news__img card-img-top"></a>
+                <a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url('post') ?>" alt="article-news" class="article-news__img card-img-top"></a>
             <?php else:?>
                 <a href="<?php the_permalink() ?>"><img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt="article-news" class="article-news__img card-img-top"></a>
             <?php endif;?>

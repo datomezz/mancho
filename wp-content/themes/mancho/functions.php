@@ -7,7 +7,7 @@ require "remove_actions.php";
 
 add_theme_support( 'post-thumbnails' );
 
-add_action( "wp_enqueue_scripts", "mancho_styles");
+add_action( "wp_head", "mancho_styles");
 add_action( "wp_footer", "mancho_footer_scripts");
 
 function mancho_styles(){
@@ -83,5 +83,30 @@ add_filter( 'document_title_parts', function( $parts ){
 	if( isset($parts['site']) ) unset($parts['site']);
 	return $parts;
 });
+//Image sizes
+add_image_size('article', 341, 192, true);
 
+add_image_size('slider', 760, 367, true);
+
+//Menu
+
+add_action("after_setup_theme", "siri");
+
+function siri(){
+    register_nav_menu("yle", "pitalo");
+}
+
+//Sidebar
+add_theme_support('widgets');
+
+add_action("widgets_init", "register_my_widgets");
+
+function register_my_widgets(){
+    $sidebarWidgets = array(
+        "name" => "Test sidebar",
+        "id" => "test_sidebar",
+        "description" => "my test sidebar",
+    );
+    register_sidebar($sidebarWidgets);  
+}
 ?>

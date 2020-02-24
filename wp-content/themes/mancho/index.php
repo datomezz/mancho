@@ -36,7 +36,8 @@
         <a href="#" class="hr-category__text m-0"><?php echo $categories_names[$i]; ?></a>
     </div>
     <section class="row mx-0 mb-5 px-md-2 px-0">
-        <?php $posts = get_posts( array(
+        <?php $posts = get_posts($args);
+                $args = array(
                 'numberposts' => 3,
                 'category_name' => $categories[$i],
                 'orderby'     => 'date',
@@ -46,7 +47,7 @@
                 'meta_key'    => '',
                 'meta_value'  =>'',
                 'post_type'   => 'post',
-                'suppress_filters' => true )); 
+                'suppress_filters' => true ); 
         ?>
         <?php foreach( $posts as $post ) : ?>
             <?php get_template_part("includes/article", "excerpt"); ?>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="ka-KA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,24 +36,22 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavMenu" aria-controls="topnavMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="collapse navbar-collapse" id="topnavMenu"> -->
 			<?php wp_nav_menu( array(
-						'theme_location'  => 'primary',
-						'menu'            => '',
-						'container'       => 'div',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'topnavMenu',
-						'menu_class'      => 'topnav__ul',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-						'depth'           => 2,
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					  ) ); ?>
-            <!-- </div> -->
+                'theme_location'  => 'primary',
+                'menu'            => '',
+                'container'       => 'div',
+                'container_class' => 'collapse navbar-collapse',
+                'container_id'    => 'topnavMenu',
+                'menu_class'      => 'topnav__ul',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+                'depth'           => 2,
+                'walker'          => new WP_Bootstrap_Navwalker(),
+                ) ); ?>
         </nav>

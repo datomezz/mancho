@@ -5,9 +5,9 @@
 <section class="row mx-0">
 <article class="col-12 p-0">
 	<div class="post card p-0 bg-color border-md-0 border border-bottom-0">
-		<div class="img-container">
+		<div class="post-container col-md-10 offset-md-1 col-12 offset-0 ">
 			<?php if(has_post_thumbnail()) : ?>
-				<img src="<?php the_post_thumbnail_url('lg'); ?>" alt="article-news" class="rounded-0 post__img card-img-top">
+				<img src="<?php the_post_thumbnail_url(); ?>" alt="article-news" class="rounded-0 post__img card-img-top">
 			<?php else : ?>
 				<img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt="article-news" class="rounded-0 post__img card-img-top">
 			<?php endif; ?>

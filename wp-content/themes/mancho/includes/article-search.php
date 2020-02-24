@@ -11,7 +11,7 @@
     <?php $posts = get_posts( array(
             'numberposts' => 12,
             'category'    => 0,
-            'orderby'     => 'date',
+            'orderby'     => 'rand',
             'order'       => 'DESC',
             'include'     => array(),
             'exclude'     => array(),

@@ -90,9 +90,10 @@ a{
         background: $main-color;
     }
 }
-//SEE-MORE
+//load_more
 .see-more{
-    color: #fff;
+    cursor: pointer;
+    color: #fff !important;
     transition: .2s ease;
     &:hover{
         color : #fff;
@@ -130,46 +131,13 @@ a{
     margin: 0;
     padding: .5rem 0;
 }
-//TAGS
-.tags{
-    i{
-        color: $main-color;
-        margin-right: .5rem;
-        border-right: .4px solid #dddddd;
-        padding-right: .5rem;
-    }
-    a{
-        border:1px solid $main-color;
-        border-radius: 10vw;
-        padding: .2rem .5rem;
-        font-size: .8rem;
-        font-weight: bold;
-        color: #000;
-        margin-top: 1rem;
-        &:hover{
-            background: $main-color;
-            color: #fff;
-        }
-    }
-}
-.tags__tag{
-    border:1px solid $main-color;
-    border-radius: 10vw;
-    padding: .2rem .5rem;
-    font-size: .8rem;
-    font-weight: bold;
-    color: #000;
-    margin-top: 1rem;
-    &:hover{
-        background: $main-color;
-        color: #fff;
-    }
-}
 //PAGINATION
 .page-numbers{
-    width: 2rem;
-    height:2rem;
-    margin-right: .05rem;
+    width: 1.8rem;
+    height:1.8rem;
+    margin-right: .1rem;
+    border-radius: 5px;
+    font-weight: bold;
     @include flex(row, center, center);
     border: 1px solid $main-color;
     background: #fff;
@@ -177,6 +145,16 @@ a{
     &:hover{
         background: $main-color;
         color: #fff;
+    }
+}
+.pagination>.prev, .pagination>.next{
+    border: none;
+    color: $main-color;
+    transition: .3s ease;
+    font-size: 1.2rem;
+    &:hover{
+        background: none;
+        color: gray;
     }
 }
 .current{

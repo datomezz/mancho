@@ -1,3 +1,4 @@
+<?php dynamic_sidebar("test_sidebar"); ?>
 <section class="row mx-0 my-3">
 	<div class="slider col-lg-8 col-12 carousel slide my-lg-0 p-0" data-ride="carousel" id="slider">
 		<ol class="carousel-indicators">
@@ -21,7 +22,7 @@
 			<?php foreach( $posts as $post ) : ?>
 				<div class="carousel-item">
 					<?php if(has_post_thumbnail()) : ?>
-						<img src="<?php the_post_thumbnail_url("lg");?>" alt=""  class="slider__img">
+						<img src="<?php the_post_thumbnail_url("slider");?>" alt=""  class="slider__img">
 					<?php else :?>
 						<img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt=""  class="slider__img">
 					<?php endif ?>
