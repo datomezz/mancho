@@ -1,18 +1,12 @@
 <?php 
-    // $posts = get_posts( array(
-    //     'numberposts' => 12,
-    //     'category'    => 0,
-    //     'orderby'     => 'date',
-    //     'order'       => 'DESC',
-    //     'include'     => array(),
-    //     'exclude'     => array(),
-    //     'meta_key'    => '',
-    //     'meta_value'  =>'',
-    //     'post_type'   => 'post',
-    //     'suppress_filters' => true )); 
+$numberPosts = 6;
+$query = new WP_Query( array( 'category' => 0, 'orderby'=> 'date'));
+while ( $query->have_posts() ) {
+	$query->the_post();
 
-    // foreach( $posts as $post){
-    //     get_template_part("includes/article", "excerpt");
-    // }
-    echo "yleo shen ";
+	get_template_part("includes/article", "excerpt");
+}
 ?>
+<div class="col-12 d-flex flex-row justify-content-center mx-0 mt-5" id="load_more">
+	<a href="javascript:void(0)" class="see-more rounded-pill bg-main px-4 py-2" id="true_loadmore">მეტის ნახვა</a>
+</div>

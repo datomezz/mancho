@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 
+<?php echo $_SERVER["PHP_SELF"]; ?>
+
 <?php 
     $ajax_link = admin_url("admin-ajax.php") . "?action=loadmore";
     echo "<div class='ajax-link' style='display:none'>$ajax_link</div>";
@@ -14,9 +16,10 @@
     <a href="#" target="_blank" class="hr-category__text m-0">სიახლეები</a>
 </div>
 <section class="news-section row mx-0 mb-5 px-md-2 px-0">
-    <?php $posts = get_posts( array(
-            'numberposts' => 6,
-            'category'    => 0,
+    <?php
+        $posts = get_posts( array(
+            'numberposts' => 3,
+            'category'    => null,
             'orderby'     => 'date',
             'order'       => 'DESC',
             'include'     => array(),
@@ -29,10 +32,11 @@
         foreach( $posts as $post){
             get_template_part("includes/article", "excerpt");
         }
+
     ?>
-        <div class="col-12 d-flex flex-row justify-content-center mx-0 mt-5" id="load_more">
-            <a href="javascript:void(0)" class="see-more rounded-pill bg-main px-4 py-2" id="true_loadmore">მეტის ნახვა</a>
-        </div>
+    <div class="col-12 d-flex flex-row justify-content-center mx-0 mt-5" id="load_more">
+        <a href="javascript:void(0)" class="see-more rounded-pill bg-main px-4 py-2" id="true_loadmore">მეტის ნახვა</a>
+    </div>
 </section>
 
 <?php for($i = 0; $i < 4; $i++) : ?>
@@ -61,7 +65,7 @@
 
 <script>
 
-let loadMoreBtn = document.querySelector(".see-more");
+let loadMoreBtn = document.querySelector("#load_more");
 let postsContainer = document.querySelector(".news-section");
 
 loadMoreBtn.onclick = function(){
@@ -75,7 +79,7 @@ function ajaxLoadMore(){
 	req.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
             postsContainer.innerHTML = req.responseText;
-            alert(req.responseText);
+            // alert(req.responseText);
 		}
 	}
 	
