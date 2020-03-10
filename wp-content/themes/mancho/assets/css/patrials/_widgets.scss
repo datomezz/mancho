@@ -1,0 +1,90 @@
+.topnews {
+    border-top: 3px solid $main-color;
+    box-sizing: border-box;
+    overflow: hidden;
+    li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding-top: 2rem;
+        position:relative;
+        &::before{
+            content : "კალენდარი";
+            display: block;
+            width: 30%;
+            height: 1.5rem;
+            background: $main-color;
+            position: absolute;
+            top:0;
+            padding-left: .5rem;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+}
+
+.widgettitle{
+    display: none;
+}
+.calendar_wrap{
+    display: flex;
+    justify-content: center;
+}
+#wp-calendar{
+    width: 100%;
+    height: auto;
+    td{
+        text-align: center;
+    }
+    th{
+        text-align: center;
+        border: 1px solid #000;
+        cursor: pointer;
+        transition: .2s ease;
+        &:hover{
+            background: $main-color;
+            color: #fff;
+        }
+    }
+    tbody{
+        margin: .6rem 0;
+        vertical-align: auto;
+        td{
+            border: 1px solid black;
+            font-size: .8rem;
+            padding: .5rem 0;
+            background: $main-color;
+            color: #fff;
+            cursor: pointer;
+            transition : .2s ease;
+            &:hover{
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+    tfoot{
+        display: none;
+    }
+    caption{
+        display: none;
+    }
+    [colspan]{
+        cursor: auto;
+        background: white;
+        border: 1px solid #fff;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        &:last-child{
+            border: 1px solid white;
+        }
+    }
+}
+
+#today{
+    background: red !important;
+    &:hover{
+        background: #fff !important;
+    }
+}

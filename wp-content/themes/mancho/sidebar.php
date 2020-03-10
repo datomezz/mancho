@@ -1,4 +1,3 @@
-<?php dynamic_sidebar("test_sidebar"); ?>
 <section class="row mx-0 my-3">
 	<div class="slider col-lg-8 col-12 carousel slide my-lg-0 p-0" data-ride="carousel" id="slider">
 		<ol class="carousel-indicators">
@@ -42,36 +41,8 @@
 		</div>
 	</div>
 	<div class="col-lg-4 col-12 p-0">
-		<?php $posts = get_posts( array(
-				'numberposts' => 1,
-				'category'    => 0,
-				'category_name' => 'ads',
-				'orderby'     => 'meta_value_num',
-				'order'       => 'DESC',
-				'include'     => array(),
-				'exclude'     => array(),
-				'meta_key'    => '',
-				'meta_value'  =>'',
-				'post_type'   => 'post',
-				'suppress_filters' => true )); 
-		?>
-		<?php foreach( $posts as $post ) : ?>
 			<div class="topnews col-lg-11 offset-lg-1 col-12 offset-0 mt-lg-0 mt-3 h-100 p-0 bg-light">
-				<p class="topnews__header pl-2 m-0">დღის სიახლე</p>
-				<?php if(has_post_thumbnail()) : ?>
-						<img src="<?php the_post_thumbnail_url("lg");?>" alt=""  class="topnews__img">
-					<?php else :?>
-						<img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt=""  class="topnews__img">
-					<?php endif ?>
-				<div class="topnews__body p-2">
-					<a href="<?php the_permalink() ?>"><h5 class="topnews__body-title"><?php the_title(); ?></h5></a>
-					<p class="topnews__body-text"><?php the_excerpt(); ?></p>
-				</div>
+				<?php dynamic_sidebar("test_sidebar"); ?>
 			</div>
-		<?php endforeach ?>
 	</div>
 </section>
-<script>
-	let post = document.querySelectorAll(".carousel-item");
-	post[0].classList.add("active");
-</script>

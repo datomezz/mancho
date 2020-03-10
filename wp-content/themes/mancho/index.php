@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 
-<?php echo $_SERVER["PHP_SELF"]; ?>
-
 <?php 
     $ajax_link = admin_url("admin-ajax.php") . "?action=loadmore";
     echo "<div class='ajax-link' style='display:none'>$ajax_link</div>";

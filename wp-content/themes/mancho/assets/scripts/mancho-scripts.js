@@ -9,13 +9,17 @@ window.onscroll = function(){
     }
 }
 
+//Carousel
+	let post = document.querySelectorAll(".carousel-item");
+	post[0].classList.add("active");
+
 //AJAX
 
 let loadMoreBtn = document.querySelector("#load_more");
 let postsContainer = document.querySelector("#section_news");
 
 loadMoreBtn.onclick = function(){
-	ajaxLoadMore();
+    ajaxLoadMore();
 }
 
 function ajaxLoadMore(){
@@ -29,7 +33,7 @@ function ajaxLoadMore(){
 	}
 	
 	req.open("GET", data, true);
-	req.send();
+    req.send();
 }
 
 // Disable all buttons exept one
@@ -39,3 +43,6 @@ loadMoreBtn_arr = document.querySelectorAll("#load_more");
 for(let x = 1; x < loadMoreBtn_arr.length; x++){
     loadMoreBtn_arr[x].className = "d-none";
 }
+
+//Calendar
+

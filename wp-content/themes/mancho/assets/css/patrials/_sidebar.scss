@@ -21,33 +21,3 @@
     background-color: rgba(0,0,0,.8);
 }
 //TOPNEWS
-.topnews{
-    border: 1px solid $main_color;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-.topnews__header{
-    width: 100%;
-    background: $main_color;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-}
-.topnews__body{
-    width: 100%;
-    max-height: 11rem;
-    overflow: hidden;
-    .topnews__body-text{
-        font-size: .8rem;
-        overflow-wrap: break-word;
-    }
-    .topnews__body-title{
-        font-weight: bold;
-    }
-}
-.topnews__img{
-    width: 100%;
-    max-height: 10rem;
-    border: 3px solid $main_color;
-    border-bottom: 4px solid $main_color;
-}

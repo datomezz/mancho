@@ -106,7 +106,7 @@ function register_my_widgets(){
     $sidebarWidgets = array(
         "name" => "Test sidebar",
         "id" => "test_sidebar",
-        "description" => "my test sidebar",
+        "description" => "my test sidebar"
     );
     register_sidebar($sidebarWidgets);  
 }
@@ -154,17 +154,13 @@ add_action("wp_ajax_nopriv_loadmore", "load_More");
 
 
 function load_More(){
-    $numberPosts = 6;
-    $query = new WP_Query( array( 'category' => 0, 'orderby'=> 'date'));
-    while ( $query->have_posts() ) {
+    $query = new WP_Query( array('orderby'=> 'date',  'posts_per_page' => 12));
+    while ($query->have_posts()) {
         $query->the_post();
-
+        
         get_template_part("includes/article", "excerpt");
     }
-    echo "
-        <div class='col-12 d-flex flex-row justify-content-center mx-0 mt-5' id='load_more'>
-            <a href='javascript:void(0)' class='see-more rounded-pill bg-main px-4 py-2' id='true_loadmore'>მეტის ნახვა</a>
-        </div>";
+
     wp_die();
 }
 
