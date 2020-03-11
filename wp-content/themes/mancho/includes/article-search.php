@@ -9,7 +9,7 @@
 
 <section class="news-section row mx-0 mb-5 px-md-2 px-0">
     <?php $posts = get_posts( array(
-            'numberposts' => 12,
+            'numberposts' => 3,
             'category'    => 0,
             'orderby'     => 'rand',
             'order'       => 'DESC',

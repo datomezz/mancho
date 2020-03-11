@@ -104,9 +104,9 @@ add_action("widgets_init", "register_my_widgets");
 
 function register_my_widgets(){
     $sidebarWidgets = array(
-        "name" => "Test sidebar",
-        "id" => "test_sidebar",
-        "description" => "my test sidebar"
+        "name" => "Mancho's sidebar",
+        "id" => "mancho_widgets",
+        "description" => "Mancho's Sidebar"
     );
     register_sidebar($sidebarWidgets);  
 }

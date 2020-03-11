@@ -42,7 +42,7 @@
 	</div>
 	<div class="col-lg-4 col-12 p-0">
 			<div class="topnews col-lg-11 offset-lg-1 col-12 offset-0 mt-lg-0 mt-3 h-100 p-0 bg-light">
-				<?php dynamic_sidebar("test_sidebar"); ?>
+				<?php dynamic_sidebar("mancho_widgets"); ?>
 			</div>
 	</div>
 </section>

@@ -6,16 +6,15 @@
 				</div>
 			</div>
 
-			<?php
+		<?php
 			while ( have_posts() ) :
 				the_post();
 				get_template_part( 'includes/article', 'excerpt' );
 			endwhile;
-		else :
+			else :
+				get_template_part("includes/article", "search");
 
-			get_template_part("includes/article", "search");
-
-		endif;
+			endif;
 		?>
 <?php
 get_footer();
