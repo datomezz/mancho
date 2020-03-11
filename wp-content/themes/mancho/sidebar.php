@@ -20,11 +20,11 @@
 			?>
 			<?php foreach( $posts as $post ) : ?>
 				<div class="carousel-item">
-					<?php if(has_post_thumbnail()) : ?>
-						<img src="<?php the_post_thumbnail_url("slider");?>" alt=""  class="slider__img">
-					<?php else :?>
-						<img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt=""  class="slider__img">
-					<?php endif ?>
+					<?php if(has_post_thumbnail()):?>
+						<a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url('slider') ?>" alt="slider" class="slider__img"></a>
+					<?php else:?>
+						<a href="<?php the_permalink() ?>"><img src="<?php bloginfo( "template_directory" ); ?>/assets/img/empty_img.png" alt="article-news" class="slider__img"></a>
+					<?php endif;?>
 					<div class="carousel-caption d-none d-md-block">
 						<a href="<?php the_permalink() ?>"><h5 class="slider__headText"><?php the_title(); ?></h5></a>
 					</div>

@@ -573,6 +573,7 @@ a:active {
 .slider__img {
   width: 100%;
   height: 23rem;
+  cursor: auto;
 }
 
 .slider__dot {
@@ -670,17 +671,8 @@ a:active {
   font-weight: 500;
 }
 
-.widgettitle {
+.widgettitle, tfoot, caption {
   display: none;
-}
-
-.calendar_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 #wp-calendar {
@@ -707,7 +699,6 @@ a:active {
 
 #wp-calendar tbody {
   margin: .6rem 0;
-  vertical-align: auto;
 }
 
 #wp-calendar tbody td {
@@ -724,14 +715,6 @@ a:active {
 #wp-calendar tbody td:hover {
   background: #fff;
   color: #000;
-}
-
-#wp-calendar tfoot {
-  display: none;
-}
-
-#wp-calendar caption {
-  display: none;
 }
 
 #wp-calendar [colspan] {
