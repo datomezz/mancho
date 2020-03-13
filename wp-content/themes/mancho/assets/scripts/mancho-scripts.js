@@ -18,14 +18,24 @@ window.onscroll = function(){
 let loadMoreBtn = document.querySelector("#load_more");
 let postsContainer = document.querySelector("#section_news");
 
+let loadMoreCounter = 1;
+
 loadMoreBtn.onclick = function(){
     ajaxLoadMore();
+    loadMoreCounter++;
 }
 
 function ajaxLoadMore(){
-	let req = new XMLHttpRequest();
-    let data = document.querySelector(".ajax-link").innerText;
+    let req = new XMLHttpRequest();
+    let data = document.querySelector(".ajax-link");
 
+    if(loadMoreCounter > 1){
+        data = data.innerText + "_second";
+        loadMoreBtn.className = "d-none";
+    } else {
+        data = data.innerText;
+    }
+    console.log(loadMoreCounter);
 	req.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
             postsContainer.innerHTML = req.responseText;

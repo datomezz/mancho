@@ -149,12 +149,26 @@ function register_post_types(){
 
 //AJAX
 
-add_action("wp_ajax_loadmore", "load_More");
-add_action("wp_ajax_nopriv_loadmore", "load_More");
+add_action("wp_ajax_loadmore", "load_more");
+add_action("wp_ajax_nopriv_loadmore", "load_more");
+
+add_action("wp_ajax_loadmore_second", "load_more_second");
+add_action("wp_ajax_nopriv_loadmore_second", "load_more_second");
 
 
-function load_More(){
+function load_more(){
     $query = new WP_Query( array('orderby'=> 'date',  'posts_per_page' => 12));
+    while ($query->have_posts()) {
+        $query->the_post();
+        
+        get_template_part("includes/article", "excerpt");
+    }
+
+    wp_die();
+}
+
+function load_more_second(){
+    $query = new WP_Query( array('orderby'=> 'date',  'posts_per_page' => 24));
     while ($query->have_posts()) {
         $query->the_post();
         
