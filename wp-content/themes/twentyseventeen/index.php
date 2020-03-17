@@ -16,8 +16,9 @@
  */
 
 get_header(); ?>
-
+<?php echo "yleo" . get_post_format(); ?>
 <div class="wrap">
+<?php echo "yleo" . get_post_format(); ?>
 	<?php if ( is_home() && ! is_front_page() ) : ?>
 		<header class="page-header">
 			<h1 class="page-title"><?php single_post_title(); ?></h1>

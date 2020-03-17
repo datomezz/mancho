@@ -717,6 +717,11 @@ a:active {
   color: #000;
 }
 
+#wp-calendar tbody td a {
+  color: #000;
+  font-weight: bold;
+}
+
 #wp-calendar [colspan] {
   cursor: auto;
   background: white;

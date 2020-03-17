@@ -4,21 +4,23 @@
     <a href="#" target="_blank" class="hr-category__text m-0">სიახლეები</a>
 </div>
 <section class="news-section row mx-0 mb-5 px-md-2 px-0">
-    <?php $posts = get_posts( array(
-            'numberposts' => 0,
-            'category'    => 0,
-            'orderby'     => 'date',
-            'order'       => 'DESC',
-            'include'     => array(),
-            'exclude'     => array(),
-            'meta_key'    => '',
-            'meta_value'  =>'',
-            'post_type'   => 'post',
-            'suppress_filters' => true )); 
+    <?php 
+		if ( have_posts() ) :
+			?>
+			<?php
 
-        foreach( $posts as $post){
-            get_template_part("includes/article", "excerpt");
-        }
+			while ( have_posts() ) :
+				the_post();
+                
+                get_template_part("includes/article", "excerpt");
+
+			endwhile;
+
+		else :
+
+			get_template_part( 'template-parts/post/content', 'none' );
+
+		endif;
 	?>
 	<div class="row col-12 pagination mx-0 mt-5 justify-content-center">
 		<?php   $args = array(
@@ -29,6 +31,5 @@
 		?>
 	</div>
 </section>
-
 	
 <?php get_footer(); ?>

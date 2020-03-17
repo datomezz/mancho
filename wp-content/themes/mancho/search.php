@@ -8,7 +8,7 @@
 
 		<?php
 			while ( have_posts() ) :
-				the_post();
+				the_post();	
 				get_template_part( 'includes/article', 'excerpt' );
 			endwhile;
 			else :
