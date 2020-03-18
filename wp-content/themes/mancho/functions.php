@@ -10,14 +10,18 @@ add_theme_support( 'post-thumbnails' );
 add_action( "wp_head", "mancho_styles");
 add_action( "wp_footer", "mancho_footer_scripts");
 
+
 function mancho_styles(){
-	wp_enqueue_style( 'mancho-style', get_stylesheet_uri() );
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
+
+    wp_enqueue_style( 'mancho-style', get_stylesheet_uri() );
 	wp_enqueue_style( "bootstrap.css", get_template_directory_uri() . "/assets/scripts/bootstrap/css/bootstrap.min.css");
 	wp_enqueue_style( "main.css", get_template_directory_uri() . "/assets/css/main.css");
 	wp_enqueue_style( "fontawesome.css", get_template_directory_uri() . "/assets/scripts/fontawesome/css/all.css");
 }
 function mancho_footer_scripts(){
-    wp_enqueue_script("jquery");
+
     wp_enqueue_script("popper", get_template_directory_uri() . "/assets/scripts/bootstrap/popper.min.js");
 	wp_enqueue_script("bootstrap", get_template_directory_uri() . "/assets/scripts/bootstrap/js/bootstrap.min.js");
     wp_enqueue_script("loadmore", get_template_directory_uri() . "/assets/scripts/loadmore.js");

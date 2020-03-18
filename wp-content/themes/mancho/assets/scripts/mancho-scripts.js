@@ -54,6 +54,8 @@ for(let x = 1; x < loadMoreBtn_arr.length; x++){
     loadMoreBtn_arr[x].className = "d-none";
 }
 
-//Calendar
-
-
+//index.php Post Show
+$(window).on("load", function(){
+    $("#section_").prev().remove();
+    $("#section_").remove();
+});
