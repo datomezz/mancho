@@ -742,6 +742,23 @@ a:active {
   background: #fff !important;
 }
 
+.form__btn {
+  background: #FD603E;
+  color: #fff;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.form__btn:hover {
+  color: #fff;
+  background: #ce4d31;
+}
+
+.form-introduce__container-title {
+  text-align: center;
+  color: #FD603E;
+}
+
 @media screen and (max-width: 1200px) {
   .nav-link::after {
     width: 0 !important;
@@ -805,22 +822,5 @@ a:active {
   body {
     font-size: 12px !important;
   }
-}
-
-.form__btn {
-  background: #FD603E;
-  color: #fff;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-
-.form__btn:hover {
-  color: #fff;
-  background: #ce4d31;
-}
-
-.form-introduce__container-title {
-  text-align: center;
-  color: #FD603E;
 }
 /*# sourceMappingURL=main.css.map */

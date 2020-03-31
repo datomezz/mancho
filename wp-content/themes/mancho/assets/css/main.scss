@@ -6,6 +6,7 @@
 @import "patrials/_sidebar.scss";
 @import "patrials/_footer.scss";
 @import "patrials/_widgets.scss";
+@import "patrials/_form.scss";
 
 @media screen and (max-width:1200px){
     .nav-link{
@@ -60,19 +61,4 @@
     body{
         font-size: 12px !important;
     }
-}
-
-.form__btn{
-    background : $main_color;
-    color : #fff;
-    transition : .5s ease;
-    &:hover{
-        color : #fff;
-        background : rgb(206, 77, 49);
-    }
-}
-
-.form-introduce__container-title{
-    text-align : center;
-    color : $main_color;
 }
