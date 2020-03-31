@@ -64,9 +64,9 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews(get_the_ID());
     }
 }
-//Dots in article
+// Dots in article
 function wpdocs_custom_excerpt_length() {
-    return 18;
+    return 30;
 }
 add_filter('excerpt_more', "correctMore");
 function correctMore($more) {

@@ -38,12 +38,17 @@ function ajaxLoadMore(){
     console.log(loadMoreCounter);
 	req.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-            postsContainer.innerHTML = req.responseText;
+            postsContainer.innerHTML = req.response;
+            let text = document.querySelectorAll("#section_news .article-news__text");
+            for(let i = 0; i < text.length; i++){
+                threeDot(text[i]);
+            }
 		}
 	}
-	
 	req.open("GET", data, true);
     req.send();
+
+
 }
 
 // Disable all buttons exept one
@@ -58,4 +63,33 @@ for(let x = 1; x < loadMoreBtn_arr.length; x++){
 $(window).on("load", function(){
     $("#section_").prev().remove();
     $("#section_").remove();
+});
+
+// three Dots
+function threeDot(str){
+    let strText = str;
+    strText = strText.innerText;
+    let sibling = str.previousElementSibling.offsetHeight;
+    let parent = str.parentNode.offsetHeight;
+
+    let currentWidth = str.clientWidth;
+    let sum = (currentWidth / 10) * ((parent - sibling) / 30);
+
+    if(sum < strText.length){
+        strText = strText.split("").reverse().join("");
+        strText = strText.slice(strText.length - sum);
+        strText = strText.split("").reverse().join("");
+    } 
+    
+    str.innerText = strText + "...";
+    
+}
+
+let excerptText = document.querySelectorAll(".article-news__text");
+let excerptTitle = document.querySelector(".article-news__title");
+
+window.addEventListener("load", function(){
+    for(let i = 0; i < excerptText.length; i++){
+        threeDot(excerptText[i]);
+    }
 });
