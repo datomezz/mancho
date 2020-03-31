@@ -24,7 +24,7 @@
                 <img src="<?php bloginfo('template_directory');?>/assets/img/logo.png" alt="footer-logo" class="footer-img footer-img__responsive">
             </div>
             <div class="footer-bottom row align-items-center mx-0">
-                <p class="footer-bottom__text m-0 py-1 px-2">© 2019. All Right Reserved</p>
+                <p class="footer-bottom__text m-0 py-1 px-2">© <?php echo date("Y");?>. All Right Reserved</p>
             </div>
         </footer>
 	</main>

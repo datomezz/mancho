@@ -115,41 +115,6 @@ function register_my_widgets(){
     register_sidebar($sidebarWidgets);  
 }
 
-//Portfolio
-
-add_action("init", "register_post_types");
-
-function register_post_types(){
-    $portfolioArr =  array(
-        "label" => null,
-        "labels" => array(
-            "name" => "პორტფოლიო",
-            "singular_name" => "პორტფოლიო",
-            "add_new" => "add new post",
-            "add_new_item" => "ახალი პოსტის დამატება", //title
-            "edit_item" => "პოსტის რედაქტირება",
-            "new_item" => "ახალი პოსტი",
-            "view_item" => "სიახლის ნახვა",
-            "menu_name" => "Portfolio"
-        ),
-        "description" => " ",
-        "public" => true,
-        'publicly_queryable'  => true,
-        'exclude_from_search' => true,
-        'show_ui'             => true,
-        'show_in_nav_menus'   => true,
-        "show_in_manu" => true,
-        "show_in_rest" => true,
-        "rest_base" => null,
-        "menu_position" => 4,
-        "menu_icon" => "dashicons-format-gallery",
-        "hierartical" => false,
-        "supports" => array("title", "editor", "author", "excerpt", "thumbnail"),
-        "taxonomies" => array()    
-    );
-
-    register_post_type("portfolio", $portfolioArr);
-}
 
 //AJAX
 
