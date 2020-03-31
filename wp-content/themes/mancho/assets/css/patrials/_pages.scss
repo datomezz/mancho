@@ -1,0 +1,23 @@
+//Pages
+
+.page-introduce__container-title{
+    text-align : center;
+    color : $main_color;
+}
+
+.page-introducer__ol{
+    li{
+        list-style: decimal;
+        color : #6c757d;
+    }
+}
+//Forms
+.form__btn{
+    background : $main_color;
+    color : #fff;
+    transition : .5s ease;
+    &:hover{
+        color : #fff;
+        background : rgb(206, 77, 49);
+    }
+}

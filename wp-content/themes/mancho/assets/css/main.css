@@ -742,6 +742,16 @@ a:active {
   background: #fff !important;
 }
 
+.page-introduce__container-title {
+  text-align: center;
+  color: #FD603E;
+}
+
+.page-introducer__ol li {
+  list-style: decimal;
+  color: #6c757d;
+}
+
 .form__btn {
   background: #FD603E;
   color: #fff;
@@ -752,11 +762,6 @@ a:active {
 .form__btn:hover {
   color: #fff;
   background: #ce4d31;
-}
-
-.form-introduce__container-title {
-  text-align: center;
-  color: #FD603E;
 }
 
 @media screen and (max-width: 1200px) {
