@@ -127,3 +127,5 @@ form.on("submit", function(){
     });
     event.preventDefault();
 });
+
+console.log("%cMEZZ.CODES %c\nFkn.. MEZZ.CODES .","font-size: 2rem; color: yellow; text-shadow: 1px 1px 1px black;","font-size: 12px;");

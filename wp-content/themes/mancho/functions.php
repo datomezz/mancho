@@ -22,7 +22,6 @@ function mancho_styles(){
 }
 function mancho_footer_scripts(){
 
-    wp_enqueue_script("popper", get_template_directory_uri() . "/assets/scripts/bootstrap/popper.min.js");
 	wp_enqueue_script("bootstrap", get_template_directory_uri() . "/assets/scripts/bootstrap/js/bootstrap.min.js");
 	wp_enqueue_script('mancho-scripts', get_template_directory_uri() . "/assets/scripts/mancho-scripts.js", array('jquery'), true);
 }
@@ -54,6 +53,7 @@ function setPostViews($postID) {
 // Add it to a column in WP-Admin
 add_filter('manage_posts_columns', 'posts_column_views');
 add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
+
 function posts_column_views($defaults){
     $defaults['post_views'] = __('Views');
     return $defaults;
