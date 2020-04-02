@@ -629,6 +629,24 @@ background: red !important;
 #today:hover {
 background: #fff !important;
 }
+.page-introduce__container-title {
+text-align: center;
+color: #FD603E;
+}
+.page-introducer__ol li {
+list-style: decimal;
+color: #6c757d;
+}
+.form__btn {
+background: #FD603E;
+color: #fff;
+-webkit-transition: .5s ease;
+transition: .5s ease;
+}
+.form__btn:hover {
+color: #fff;
+background: #ce4d31;
+}
 @media screen and (max-width: 1200px) {
 .nav-link::after {
 width: 0 !important;

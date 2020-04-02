@@ -57,7 +57,7 @@
 <h3 class="post__title card-title m-0">ვოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდება</h3>
 <div class="article-news__footer d-flex flex-row justify-content-start my-2 py-2">
 <p class="article-news__footer-data pr-3 m-0">24 იანვარი 2020</p>
-<p class="article-news__footer-view m-0 pr-3"><i class="fas fa-eye main-color mr-1"></i>10</p>
+<p class="article-news__footer-view m-0 pr-3"><i class="fas fa-eye main-color mr-1"></i>20</p>
 </div>
 <p class="card-text post__text">
 <p>ვოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდება</p>
@@ -87,11 +87,11 @@
 <li><a href="http://localhost/wordpress_media/category/politics/" rel="category tag">პოლიტიკა</a></li></ul>        </div>
 <div class="article-news__body card-body">
 <a href="http://localhost/wordpress_media/%e1%83%95%e1%83%9d%e1%83%9a%e1%83%a1%e1%83%99%e1%83%98-%e1%83%99%e1%83%9d%e1%83%9c%e1%83%92%e1%83%a0%e1%83%94%e1%83%a1%e1%83%9b%e1%83%94%e1%83%9c%e1%83%98%e1%83%a1-%e1%83%ac%e1%83%94%e1%83%a0%e1%83%98/" class="article-news__title card-title h6">ვოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდება</a>
-<p class="article-news__text card-text text-muted">ვოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს&#8230;</p>
+<p class="article-news__text card-text text-muted">ვოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე: განცხადება მიკერძოებულია და კონკრეტული კომპანიის ინტერესს უკავშირდებავოლსკი კონგრესმენის წერილზე:&#8230;</p>
 </div>
 <div class="article-news__footer d-flex flex-row justify-content-between align-items-end px-3 py-2">
 <p class="article-news__footer-data m-0">24 იანვარი 2020</p>
-<p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i>10</p>
+<p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i>20</p>
 </div>
 </div>
 </article><article class="news-section__article col-lg-4 col-md-6 col-12 px-md-3 px-0 my-2">
@@ -109,10 +109,32 @@
 </div>
 <div class="article-news__footer d-flex flex-row justify-content-between align-items-end px-3 py-2">
 <p class="article-news__footer-data m-0">15 იანვარი 2020</p>
-<p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i>15</p>
+<p class="article-news__footer-view m-0"><i class="fas fa-eye main-color mr-1"></i>16</p>
 </div>
 </div>
 </article></section>
+<script>
+function threeDot(str){
+let strText = str.innerText;
+let sibling = str.previousElementSibling.offsetHeight;
+let parent = str.parentNode.offsetHeight;
+let currentWidth = str.clientWidth;
+let sum = (currentWidth / 10) * ((parent - sibling) / 30);
+if(sum < strText.length){
+strText = strText.split("").reverse().join("");
+strText = strText.slice(strText.length - sum);
+strText = strText.split("").reverse().join("");
+str.innerText = strText + "...";
+}
+}
+let excerptText = document.querySelectorAll(".article-news__text");
+let excerptTitle = document.querySelector(".article-news__title");
+window.addEventListener("load", function(){
+for(let i = 0; i < excerptText.length; i++){
+threeDot(excerptText[i]);
+}
+});
+</script>
 		<footer class="footer mt-5">
 <div class="menu-alakh-container"><ul id="menu-alakh" class="footer-menu row m-0 py-2 px-2"><li id="menu-item-214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-214"><a href="http://localhost/wordpress_media/contact/">კონტაქტი</a></li>
 <li id="menu-item-215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215"><a href="http://localhost/wordpress_media/ads/">რეკლამა</a></li>
@@ -121,7 +143,7 @@
 <img src="http://localhost/wordpress_media/wp-content/themes/mancho/assets/img/logo.png" alt="footer-logo" class="footer-img footer-img__responsive">
 </div>
 <div class="footer-bottom row align-items-center mx-0">
-<p class="footer-bottom__text m-0 py-1 px-2">© 2019. All Right Reserved</p>
+<p class="footer-bottom__text m-0 py-1 px-2">© 2020. All Right Reserved</p>
 </div>
 </footer>
 </main>
@@ -130,12 +152,33 @@
 <!-- <link rel='stylesheet' id='bootstrap.css-css'  href='http://localhost/wordpress_media/wp-content/themes/mancho/assets/scripts/bootstrap/css/bootstrap.min.css?ver=5.3.2' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='main.css-css'  href='http://localhost/wordpress_media/wp-content/themes/mancho/assets/css/main.css?ver=5.3.2' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='fontawesome.css-css'  href='http://localhost/wordpress_media/wp-content/themes/mancho/assets/scripts/fontawesome/css/all.css?ver=5.3.2' type='text/css' media='all' /> -->
-<link rel="stylesheet" type="text/css" href="//localhost/wordpress_media/wp-content/cache/wpfc-minified/1b446dbs/a1iiv.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="//localhost/wordpress_media/wp-content/cache/wpfc-minified/1b446dbs/fg9cf.css" media="all"/>
 <script type='text/javascript' src='http://localhost/wordpress_media/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script type='text/javascript' src='http://localhost/wordpress_media/wp-content/themes/mancho/assets/scripts/bootstrap/popper.min.js?ver=5.3.2'></script>
 <script type='text/javascript' src='http://localhost/wordpress_media/wp-content/themes/mancho/assets/scripts/bootstrap/js/bootstrap.min.js?ver=5.3.2'></script>
-<script type='text/javascript' src='http://localhost/wordpress_media/wp-content/themes/mancho/assets/scripts/loadmore.js?ver=5.3.2'></script>
 <script type='text/javascript' src='http://localhost/wordpress_media/wp-content/themes/mancho/assets/scripts/mancho-scripts.js?ver=1'></script>
+<script>
+function threeDot(str){
+let strText = str.innerText;
+let sibling = str.previousElementSibling.offsetHeight;
+let parent = str.parentNode.offsetHeight;
+let currentWidth = str.clientWidth;
+let sum = (currentWidth / 10) * ((parent - sibling) / 30);
+if(sum < strText.length){
+strText = strText.split("").reverse().join("");
+strText = strText.slice(strText.length - sum);
+strText = strText.split("").reverse().join("");
+str.innerText = strText + "...";
+}
+}
+let excerptText = document.querySelectorAll(".article-news__text");
+let excerptTitle = document.querySelector(".article-news__title");
+window.addEventListener("load", function(){
+for(let i = 0; i < excerptText.length; i++){
+threeDot(excerptText[i]);
+}
+});
+</script>
 </body>
-</html><!-- WP Fastest Cache file was created in 0.095648050308228 seconds, on 30-03-20 8:58:33 -->
+</html><!-- WP Fastest Cache file was created in 0.084824085235596 seconds, on 02-04-20 10:43:47 -->

@@ -13,7 +13,7 @@ add_action( "wp_footer", "mancho_footer_scripts");
 
 function mancho_styles(){
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js');
 
     wp_enqueue_style( 'mancho-style', get_stylesheet_uri() );
 	wp_enqueue_style( "bootstrap.css", get_template_directory_uri() . "/assets/scripts/bootstrap/css/bootstrap.min.css");
@@ -24,7 +24,6 @@ function mancho_footer_scripts(){
 
     wp_enqueue_script("popper", get_template_directory_uri() . "/assets/scripts/bootstrap/popper.min.js");
 	wp_enqueue_script("bootstrap", get_template_directory_uri() . "/assets/scripts/bootstrap/js/bootstrap.min.js");
-    wp_enqueue_script("loadmore", get_template_directory_uri() . "/assets/scripts/loadmore.js");
 	wp_enqueue_script('mancho-scripts', get_template_directory_uri() . "/assets/scripts/mancho-scripts.js", array('jquery'), true);
 }
 
@@ -64,15 +63,6 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews(get_the_ID());
     }
 }
-// Dots in article
-function wpdocs_custom_excerpt_length() {
-    return 30;
-}
-add_filter('excerpt_more', "correctMore");
-function correctMore($more) {
-	return '...';
-};
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 //Title Settings
 add_theme_support("title-tag");
@@ -118,11 +108,38 @@ function register_my_widgets(){
 
 //AJAX
 
+remove_all_filters( 'wp_mail_from' );
+remove_all_filters( 'wp_mail_from_name' );
+
 add_action("wp_ajax_loadmore", "load_more");
 add_action("wp_ajax_nopriv_loadmore", "load_more");
 
 add_action("wp_ajax_loadmore_second", "load_more_second");
 add_action("wp_ajax_nopriv_loadmore_second", "load_more_second");
+
+add_action("wp_ajax_sendMail", "send_mail");
+add_action("wp_ajax_nopriv_sendMail", "send_mail");
+
+
+function send_mail(){
+    $formName = $_POST["name"];
+    $formMail = $_POST["mail"];
+    $formSubject = $_POST["subject"];
+    $formMessage = $_POST["message"];
+
+    $to = "datomezz@gmail.com";
+
+    $headers = array(
+        "From: MySelf <admin@dima.ge>",
+        "content-type: text/html",
+        "Cc: John QCodes <admin@dot.com>",
+        "Cc: Alakh Akbar <admin@exe.com"
+    );
+
+    wp_mail($to, $formSubject, $formMessage, $headers);
+
+    wp_die();
+}
 
 
 function load_more(){

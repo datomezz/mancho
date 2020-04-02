@@ -10,19 +10,24 @@ window.onscroll = function(){
 }
 
 //Carousel
-	let post = document.querySelectorAll(".carousel-item");
-	post[0].classList.add("active");
+    let post = document.querySelectorAll(".carousel-item");
+
+    if(post[0] != undefined){
+        post[0].classList.add("active");
+    }
 
 //AJAX
 
-let loadMoreBtn = document.querySelector("#load_more");
+let loadMoreBtn = document.querySelector("#load_more") || null;
 let postsContainer = document.querySelector("#section_news");
 
 let loadMoreCounter = 1;
 
-loadMoreBtn.onclick = function(){
-    ajaxLoadMore();
-    loadMoreCounter++;
+if(loadMoreBtn != null){
+    loadMoreBtn.addEventListener("click", function(){
+        ajaxLoadMore();
+        loadMoreCounter++;
+    });
 }
 
 function ajaxLoadMore(){
@@ -59,16 +64,17 @@ for(let x = 1; x < loadMoreBtn_arr.length; x++){
     loadMoreBtn_arr[x].className = "d-none";
 }
 
-//index.php Post Show
+// index.php Post Show
+
 $(window).on("load", function(){
     $("#section_").prev().remove();
     $("#section_").remove();
 });
 
+
 // three Dots
 function threeDot(str){
-    let strText = str;
-    strText = strText.innerText;
+    let strText = str.innerText;
     let sibling = str.previousElementSibling.offsetHeight;
     let parent = str.parentNode.offsetHeight;
 
@@ -79,10 +85,8 @@ function threeDot(str){
         strText = strText.split("").reverse().join("");
         strText = strText.slice(strText.length - sum);
         strText = strText.split("").reverse().join("");
-    } 
-    
-    str.innerText = strText + "...";
-    
+        str.innerText = strText + "...";
+    }
 }
 
 let excerptText = document.querySelectorAll(".article-news__text");
@@ -92,4 +96,34 @@ window.addEventListener("load", function(){
     for(let i = 0; i < excerptText.length; i++){
         threeDot(excerptText[i]);
     }
+});
+
+//Send Mail AJAX
+
+let form = $("form");
+let action = "http://localhost/wordpress_media/wp-admin/admin-ajax.php?action=sendMail";
+
+console.log(action);
+
+form.on("submit", function(){
+    let formData = {
+        formName : $("#fname").val(),
+        formMail : $("#fmail").val(),
+        formSubject : $("#fsubject").val(),
+        formText : $("#ftextarea").val()
+    }
+
+    $.ajax({
+        url : action,
+        type : 'POST',
+        data : formData,
+    })
+    .done(function(){
+        form.html("Succses");
+        console.log(action);
+    })
+    .fail(function(){
+        form.html("Error");
+    });
+    event.preventDefault();
 });

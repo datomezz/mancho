@@ -7,8 +7,8 @@
     <meta neme="author" content="zzD">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="icon" href="<?php bloginfo("template_directory");?>/assets/img/favicon.ico">
-    <title><?php echo wp_get_document_title(); ?></title>
     <?php wp_head() ?>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <main class="container bg-color p-0">

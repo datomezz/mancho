@@ -15,16 +15,19 @@
     </div>
 </div>
 <div class="form-container row m-0 justify-content-center my-3">
-    <form class="col-md-6 col-10 p-0" action="#">
+    <form class="col-md-6 col-10 p-0" method="post" action="<?php echo admin_url('admin-ajax.php?action=sendMail');?>">
         <div class="form-inline d-flex justify-content-between">
-            <input type="text" class="form-control" id="#" placeholder="Name">
-            <input type="email" class="form-control mt-md-0 mt-3" id="#" placeholder="Email">
+            <input type="text" name="name" class="form-control" id="fname" placeholder="Name">
+            <input type="email" name="mail" class="form-control mt-md-0 mt-3" id="fmail" placeholder="Email">
+        </div>
+        <div class="form-groun my-3">
+            <input type="text" name="subject" class="form-control" id="fsubject" placeholder="Subject">
         </div>
         <div class="form-group mt-3 mb-2">
-            <textarea class="form-control" placeholder="Messege" rows="7"></textarea>
+            <textarea class="form-control" name="message" id="ftextarea" placeholder="Message" rows="7"></textarea>
         </div>
         <div class="form-row justify-content-end m-0">
-            <button class="btn form__btn " type="submit">SEND</button>
+            <button class="btn form__btn " name="submit" id="fsubmit" type="submit">SEND</button>
         </div>
     </form>
 </div>
