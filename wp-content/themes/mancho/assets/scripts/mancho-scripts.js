@@ -40,7 +40,7 @@ function ajaxLoadMore(){
     } else {
         data = data.innerText;
     }
-    console.log(loadMoreCounter);
+    
 	req.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
             postsContainer.innerHTML = req.response;
@@ -103,7 +103,7 @@ window.addEventListener("load", function(){
 let form = $("form");
 let action = "http://localhost/wordpress_media/wp-admin/admin-ajax.php?action=sendMail";
 
-console.log(action);
+
 
 form.on("submit", function(){
     let formData = {
@@ -120,12 +120,14 @@ form.on("submit", function(){
     })
     .done(function(){
         form.html("Succses");
-        console.log(action);
+
     })
     .fail(function(){
         form.html("Error");
     });
     event.preventDefault();
 });
+
+//Sign
 
 console.log("%cMEZZ.CODES %c\nFkn.. MEZZ.CODES .","font-size: 2rem; color: yellow; text-shadow: 1px 1px 1px black;","font-size: 12px;");
